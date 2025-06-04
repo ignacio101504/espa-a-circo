@@ -18,6 +18,30 @@
     .mensaje {
       font-size: 20px;
       color: #333;
+      margin-bottom: 20px;
+    }
+    .mensaje-secundario {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    .barra-contenedor {
+      width: 80%;
+      margin: 0 auto;
+      background-color: #ddd;
+      border-radius: 30px;
+      overflow: hidden;
+      height: 15px;
+    }
+    .barra-carga {
+      width: 0%;
+      height: 100%;
+      background-color: #25d366;
+      animation: cargar 1.5s linear forwards;
+    }
+    @keyframes cargar {
+      from { width: 0%; }
+      to { width: 100%; }
     }
   </style>
 
@@ -34,15 +58,6 @@
     
     fbq('init', '565138223108888');
     fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none" 
-         src="https://www.facebook.com/tr?id=565138223108888&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- Fin Pixel -->
-
-  <script>
-    // Evento personalizado
     fbq('trackCustom', 'ClickWhatsapp');
 
     // Redirección después de 1.5 segundos
@@ -53,6 +68,12 @@
 </head>
 <body>
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo">
+  
   <div class="mensaje">Te estamos conectando con un cajero…</div>
+  <div class="mensaje-secundario">No abandones la página, en segundos vas a ser direccionado con nuestro cajero</div>
+  
+  <div class="barra-contenedor">
+    <div class="barra-carga"></div>
+  </div>
 </body>
 </html>
